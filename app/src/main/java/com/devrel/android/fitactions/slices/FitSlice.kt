@@ -31,6 +31,7 @@ import androidx.slice.builders.list
 import androidx.slice.builders.row
 import com.devrel.android.fitactions.FitMainActivity
 import com.devrel.android.fitactions.R
+import com.example.myapplication.MainActivity
 
 /**
  * Base class that defines a Slice for the app.
@@ -60,7 +61,7 @@ abstract class FitSlice(val context: Context, val sliceUri: Uri) {
      * Utility method to create a SliceAction that launches the main activity.
      */
     protected fun createActivityAction(): SliceAction {
-        val intent = Intent(context, FitMainActivity::class.java)
+        val intent = Intent(context, MainActivity::class.java)
         return SliceAction.create(
             PendingIntent.getActivity(context, 0, intent, 0),
             IconCompat.createWithResource(context, R.mipmap.ic_launcher),
