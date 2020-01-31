@@ -29,9 +29,8 @@ import androidx.slice.builders.ListBuilder
 import androidx.slice.builders.SliceAction
 import androidx.slice.builders.list
 import androidx.slice.builders.row
-import com.devrel.android.fitactions.FitMainActivity
 import com.devrel.android.fitactions.R
-import com.example.myapplication.MainActivity
+import com.devrel.android.fitactions.recommendation.MainActivity
 
 /**
  * Base class that defines a Slice for the app.

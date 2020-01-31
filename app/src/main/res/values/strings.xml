@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <string name="app_name">FitActions</string>
+    <string name="app_name">OneApp</string>
     <string name="action_settings">Settings</string>
 
     <string name="slice_enter_app_hint">Enter App</string>

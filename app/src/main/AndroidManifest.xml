@@ -34,7 +34,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="com.example.myapplication.MainActivity"
+            android:name=".recommendation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -67,6 +67,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".recommendation.ChannelAddedActivity" />
 
         <service
             android:name="com.devrel.android.fitactions.tracking.FitTrackingService"
