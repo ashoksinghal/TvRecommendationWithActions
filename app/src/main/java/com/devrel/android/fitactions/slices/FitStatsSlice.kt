@@ -19,9 +19,12 @@ package com.devrel.android.fitactions.slices
 
 import android.content.Context
 import android.net.Uri
+import androidx.core.graphics.drawable.IconCompat
 import androidx.lifecycle.Observer
 import androidx.slice.Slice
 import androidx.slice.builders.*
+import androidx.slice.builders.ListBuilder.LARGE_IMAGE
+import androidx.slice.builders.ListBuilder.SMALL_IMAGE
 import com.devrel.android.fitactions.DeepLink
 import com.devrel.android.fitactions.R
 import com.devrel.android.fitactions.model.FitActivity
@@ -101,24 +104,44 @@ class FitStatsSlice(
         return list(context, sliceUri, ListBuilder.INFINITY) {
             // Add the header of the slice
             header {
-                title = context.getString(R.string.slice_stats_title, context.getString(activityType.nameId))
-                subtitle = if (data.isEmpty()) {
-                    context.getString(R.string.slice_stats_subtitle_no_data)
-                } else {
-                    context.getString(R.string.slice_stats_subtitle)
-                }
+
+                title = "Experience in HD on OneTV"/*context.getString(R.string.slice_stats_title, context.getString(activityType.nameId))*/
+//                subtitle = if (data.isEmpty()) {
+//                    context.getString(R.string.slice_stats_subtitle_no_data)
+//                } else {
+//                    context.getString(R.string.slice_stats_subtitle)
+//                }
+                subtitle= "Click to Subscribe this Addon"
                 // Defines the primary action when slice is clicked
                 primaryAction = createActivityAction()
             }
-            // Add a grid row to handle multiple cells
             gridRow {
-                data.forEach { fitActivity ->
-                    // For each activity add a cell with the fit data
-                    cell {
-                        setFitActivity(fitActivity)
-                    }
+                cell {
+                    addImage(IconCompat.createWithResource(context, R.drawable.ic_espn), SMALL_IMAGE)
+                    addTitleText("  ESPN  ")
+                }
+                cell {
+                    addImage(IconCompat.createWithResource(context, R.drawable.ic_star), SMALL_IMAGE)
+                    addTitleText("   STAR SPORTS    ")
+                }
+                cell {
+                    addImage(IconCompat.createWithResource(context, R.drawable.ic_tensports), SMALL_IMAGE)
+                    addTitleText("   TEN SPORTS   ")
                 }
             }
+
+
+
+
+//            // Add a grid row to handle multiple cells
+//            gridRow {
+//                data.forEach { fitActivity ->
+//                    // For each activity add a cell with the fit data
+//                    cell {
+//                        setFitActivity(fitActivity)
+//                    }
+//                }
+//            }
         }
     }
 
